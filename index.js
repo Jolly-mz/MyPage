@@ -1,6 +1,7 @@
 //MyPage
 
 var http = require("http"); 
+var fs = require("fs");
 const port = 8000; 
 
 http.createServer(function(req, res) { 
