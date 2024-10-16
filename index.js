@@ -7,6 +7,7 @@ http.createServer(function(req, res) {
     //res.writeHead(200, { "Content-Type": "text/plain" });
     //res.end("This is Jolly's page!");
     res.writeHead(200, { "Content-Type": "text/html" });
+    let image = fs.readFileSync(__dirname + '/MyPage/hello.png').toString('base64');
     res.write(`
         <html>
             <head>
@@ -15,6 +16,7 @@ http.createServer(function(req, res) {
             <body>
                 <h1>Welcome to Jolly's Page!</h1>
                 <p>blah blah blah!</p>
+                <img src="data:image/png;base64,${image}" alt="Jolly's Image" />
             </body>
         </html>
     `);
